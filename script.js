@@ -4,6 +4,7 @@ const clouds = document.querySelector(".cloud");
 const dust1 = document.querySelector(".dust");
 const dust2 = document.querySelector(".dust2");
 const dust3 = document.querySelector(".dust3");
+const div = document.querySelector("div");
 
 function jump () {
     mario.classList.add("jump");
@@ -45,7 +46,8 @@ const loop = setInterval (()=> {
         dust2.style.left = `${dust2Position}px`;
         dust3.style.left = `${dust3Position}px`;
 
-
+        div.classList.add("texto");
+        
 
         clearInterval(loop);
     }

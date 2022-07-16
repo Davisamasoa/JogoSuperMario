@@ -1,3 +1,8 @@
+@font-face {
+    font-family: fontMario;
+    src: url(./font/8-BIT\ WONDER.TTF);
+}
+
 *{
     margin: 0;
     padding: 0;
@@ -10,6 +15,23 @@
 body{
     background-image: url(./img/terra.jpg);
     height: 100vh;
+}
+
+div{
+    display: none;
+}
+
+.texto{
+    display: block;
+}
+
+.gameOver{
+    font-size: 100px;
+    text-align: center;
+    margin-top: 150px;
+    font-family: fontMario;
+    color: yellow;
+    text-shadow: 10px 10px 10px black;
 }
 
 .dust, .dust2, .dust3{
