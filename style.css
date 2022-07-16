@@ -153,3 +153,25 @@ main{
     }
 }
 
+@media (max-width: 700px) {
+    @keyframes pipe-animation{
+        from{
+            right: -40%;
+        }
+    
+        to{
+            right: 102%;
+        }
+    }
+    
+    .pipe{
+        animation: pipe-animation 1s linear infinite;
+    }
+
+    .gameOver{
+        font-size: 70px;
+        margin-top: 180px;
+    }
+
+
+}

@@ -25,9 +25,10 @@ const loop = setInterval (()=> {
 
     console.log("loop");
     
-    if(pipePosition <= 140 && pipePosition > 0 && marioPosition < 100) {
+    if(pipePosition <= 130 && pipePosition > 0 && marioPosition < 100) {
         clouds.style.animation = "none";
         clouds.style.left = `${cloudPosition}px`;
+        clouds.style.top = "0";
         
         pipe.style.animation = "none";
         pipe.style.left = `${pipePosition}px`;
