@@ -1,0 +1,133 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+
+body{
+    background-image: url(./img/terra.jpg);
+    height: 100vh;
+}
+
+.dust, .dust2, .dust3{
+    height: 217px;
+    width: 100%;
+    height: 40%;
+    object-fit: cover;
+    position: absolute;
+
+}
+
+.dust {
+    animation: dust-animation 3s linear infinite;
+}
+
+.dust2 {
+    animation: dust-animation2 3s linear infinite;
+}
+
+.dust3{
+    animation: dust-animation3 3s linear infinite;;
+}
+
+
+main{
+    width: 100%;
+    height: 65vh;
+    border-bottom: 20px solid rgb(35, 180, 35);
+    margin: 0 auto;
+    position: relative;
+    background: linear-gradient(#87CEEB, #E0F6FF);
+}
+
+.cloud{
+    width: 400px;
+    animation: clouds-animation 10s linear infinite;
+    position: absolute;
+}
+
+.pipe{
+    width: 80px;
+    position: absolute;
+    bottom: 0;
+    /* left: 140px; */
+    animation: pipe-animation 1.8s linear infinite;
+}
+
+.mario{
+    position: absolute;
+    width: 150px;
+    bottom: 0;
+}
+
+.jump{
+    animation: mario-jump 0.7s ease-out;
+}
+
+@keyframes pipe-animation{
+    from{
+        right: -20%;
+    }
+
+    to{
+        right: 102%;
+    }
+}
+
+@keyframes mario-jump {
+    0% {
+        bottom: 0;
+    }
+
+    50% {
+        bottom: 230px;
+    }
+
+    100% {
+        bottom: 0;
+    }
+}
+
+@keyframes clouds-animation{
+    from{
+        right: -40%;
+    }
+
+    to{
+        right: 102%;
+    }
+}
+
+@keyframes dust-animation{
+    from{
+        right: -200%;
+    }
+
+    to{
+        right: 0%;
+    }
+}
+
+@keyframes dust-animation2{
+    from{
+        right: -100%;
+    }
+
+    to{
+        right: 100%;
+    }
+}
+
+@keyframes dust-animation3{
+    from{
+        right: 0%;
+    }
+
+    to{
+        right: 200%;
+    }
+}
+
