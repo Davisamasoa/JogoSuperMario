@@ -32,7 +32,6 @@ const loop = setInterval ( () => {
     pipe.style.animation = "pipe-animation 1s linear infinite";
     const marioPosition = +window.getComputedStyle(mario).bottom.replace("px", "");
     const cloudPosition = clouds.offsetLeft;
-    console.log(marioPosition);
 
     document.addEventListener ("click", jump);
     document.addEventListener ("keydown", e => {
