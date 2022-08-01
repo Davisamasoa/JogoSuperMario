@@ -186,7 +186,10 @@ align-items: center;
       .gameOver{
         font-size: 35px;
       }
+}
 
+@media (max-width: 500px) {
+    
 .dust{
     justify-content: flex-start;
 }
@@ -196,4 +199,3 @@ align-items: center;
 }
 
 }
-
