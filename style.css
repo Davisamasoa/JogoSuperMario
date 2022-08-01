@@ -8,6 +8,7 @@
     margin: 0;
     box-sizing: border-box;
     font-family: marioFont;
+    border: none;
 }
 
 
@@ -28,6 +29,7 @@ main{
     margin: 0 auto;
     position: relative;
     overflow: hidden;
+    z-index: 0;
 }
 
 .startGame{
@@ -49,6 +51,11 @@ margin-top: -70px;
     height: 50px;
     font-size: 20px;
     cursor: pointer;
+}
+
+.startGame button{
+    background-color: rgba(255, 10, 10, 0.8);
+    border-radius: 10px;
 }
 
 .startGame p{
@@ -88,11 +95,18 @@ margin-top: -70px;
 }
 
 .gameOver button{
-    width: 350px;
+    width: 100px;
+    height: 80px;
+    background-color: rgba(255, 255, 9, 0.8);
+    border-radius: 10px;
 }
 
 .gameOver button:hover{
     cursor: pointer;
+}
+
+.gameOver img{
+    width: 40px;
 }
 
 .dust{
@@ -142,7 +156,8 @@ margin-top: -70px;
 .clouds{
     width: 500px;
     position: absolute;
-    animation: clouds-animation linear 14s infinite;
+    top: 0;
+    right: -140%;
 }
 
 @keyframes pipe-animation {
@@ -214,7 +229,8 @@ margin-top: -70px;
       }
 
       .div-gameOver button{
-        width: 250px;
+        width: 100px;
+        height: 70px;
         font-size: 15px;
       }
 
