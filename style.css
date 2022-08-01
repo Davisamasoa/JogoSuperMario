@@ -103,9 +103,6 @@ align-items: center;
     width: 30px;
 }
 
-.dust a{
-    margin-bottom: 100px;
-}
 
 .pipe{
     position: absolute;
@@ -189,6 +186,14 @@ align-items: center;
       .gameOver{
         font-size: 35px;
       }
+
+.dust{
+    justify-content: flex-start;
+}
+
+.dust p{
+    margin-top: 40px;
+}
 
 }
 
