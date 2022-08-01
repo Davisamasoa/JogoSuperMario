@@ -36,13 +36,32 @@ height: 70vh;
 display: flex;
 justify-content: center;
 align-items: center;
+flex-direction: column;
+gap: 20px;
+text-align: center;
+color: white;
+text-shadow: 3px 3px black;
+margin-top: -70px;
 }
 
-.startGame button{
+.startGame button, .gameOver button{
     width: 260px;
     height: 50px;
     font-size: 20px;
     cursor: pointer;
+}
+
+.startGame p{
+    font-size: 20px;
+    text-align: center;
+}
+
+.startGame img{
+    width: 80px;
+}
+
+.spaceKey{
+    border-radius: 5px;
 }
 
 
@@ -53,6 +72,8 @@ align-items: center;
     display: none;
     justify-content: center;
     align-items: center;
+
+    z-index: 20;
 }
 
 .gameOver{
@@ -63,16 +84,11 @@ align-items: center;
     gap: 20px;
     color: white;
     text-shadow: 5px 5px black;
-    font-size: 
-    50px;
-    
+    font-size: 50px;
 }
 
 .gameOver button{
-    height: 40px;
-    width: 250px;
-    background-color: rgb(0, 0, 0);
-    color: white;
+    width: 350px;
 }
 
 .gameOver button:hover{
@@ -183,9 +199,25 @@ align-items: center;
         }
       }
 
+      @keyframes pipe-animation {
+        from {
+            right: -100%;
+        }
+    
+        to{
+            right: 102%;
+        }
+    }  
+
       .gameOver{
-        font-size: 35px;
+        font-size: 30px;
       }
+
+      .div-gameOver button{
+        width: 150px;
+        font-size: 15px;
+      }
+
 }
 
 @media (max-width: 500px) {

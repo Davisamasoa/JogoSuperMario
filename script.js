@@ -29,7 +29,7 @@ const loop = setInterval ( () => {
     mario.style.bottom = "0";
     const pipePosition = pipe.offsetLeft;
     clouds.style.animation = "clouds-animation linear 14s infinite";
-    pipe.style.animation = "pipe-animation 1s linear infinite";
+    pipe.style.animation = "pipe-animation 1.7s linear infinite";
     const marioPosition = +window.getComputedStyle(mario).bottom.replace("px", "");
     const cloudPosition = clouds.offsetLeft;
 
