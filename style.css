@@ -1,97 +1,135 @@
 @font-face {
-    font-family: fontMario;
+    font-family: marioFont;
     src: url(./font/8-BIT\ WONDER.TTF);
 }
 
-*{
-    margin: 0;
+* {
     padding: 0;
+    margin: 0;
     box-sizing: border-box;
-    overflow-x: hidden;
-    overflow-y: hidden;
+    font-family: marioFont;
 }
+
 
 
 body{
-    background-image: url(./img/terra.jpg);
-    height: 100vh;
+    background-color: rgb(29, 28, 28);
+    max-width: 100vw;
+    max-height: 100vh;
+    overflow: hidden;
+   
 }
 
-div{
+main{
+    border-bottom: 60px solid green;
+    background-image: linear-gradient(rgb(48, 167, 236), white);
+    height: 70vh;
+    width: 100%;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+}
+
+.startGame{
+width: 100%;
+height: 70vh;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+
+.startGame button{
+    width: 260px;
+    height: 50px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+
+.div-gameOver{
+    position: absolute;
+    width: 100%;
+    height: 70vh;
     display: none;
-}
-
-.texto{
-    display: block;
+    justify-content: center;
+    align-items: center;
 }
 
 .gameOver{
-    font-size: 100px;
-    text-align: center;
-    margin-top: 150px;
-    font-family: fontMario;
-    color: yellow;
-    text-shadow: 10px 10px 10px black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+    color: white;
+    text-shadow: 5px 5px black;
+    font-size: 
+    50px;
+    
 }
 
-.dust, .dust2, .dust3{
-    height: 217px;
-    width: 100%;
-    height: 40%;
-    object-fit: cover;
-    position: absolute;
-
+.gameOver button{
+    height: 40px;
+    width: 250px;
+    background-color: rgb(0, 0, 0);
+    color: white;
 }
 
-.dust {
-    animation: dust-animation 3s linear infinite;
+.gameOver button:hover{
+    cursor: pointer;
 }
 
-.dust2 {
-    animation: dust-animation2 3s linear infinite;
+.dust{
+    width: 100vw;
+    height: 30vh;
+    background-color: rgb(77, 39, 17);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 15px;
 }
 
-.dust3{
-    animation: dust-animation3 3s linear infinite;;
+.dust p{
+    color: white;
+    font-size: 15px;
+    font-weight: 100;
+    margin-top: 3%;
+    font-family: 'Courier New', Courier, monospace;
 }
 
-
-main{
-    width: 100%;
-    height: 65vh;
-    border-bottom: 20px solid rgb(35, 180, 35);
-    margin: 0 auto;
-    position: relative;
-    background: linear-gradient(#87CEEB, #E0F6FF);
-}
-
-.cloud{
-    width: 400px;
-    animation: clouds-animation 10s linear infinite;
-    position: absolute;
+.dust img{
+    width: 30px;
 }
 
 .pipe{
-    width: 80px;
     position: absolute;
     bottom: 0;
-    /* left: 140px; */
-    animation: pipe-animation 1.8s linear infinite;
+    right: -120%; 
+    width: 60px;
+    animation: none;
 }
 
 .mario{
+    width: 140px;
     position: absolute;
-    width: 150px;
     bottom: 0;
+    left: -20px;
 }
 
-.jump{
-    animation: mario-jump 0.7s ease-out;
+.jump {
+    animation: jump ease-out 0.5s;
 }
 
-@keyframes pipe-animation{
-    from{
-        right: -20%;
+.clouds{
+    width: 500px;
+    position: absolute;
+    animation: clouds-animation linear 14s infinite;
+}
+
+@keyframes pipe-animation {
+    from {
+        right: -30%;
     }
 
     to{
@@ -99,79 +137,53 @@ main{
     }
 }
 
-@keyframes mario-jump {
-    0% {
-        bottom: 0;
-    }
+@keyframes jump {
+   0% {
+    bottom: 0;
+   }
 
-    50% {
-        bottom: 230px;
-    }
+   40% {
+    bottom: 170px;
+   }
 
-    100% {
-        bottom: 0;
-    }
+   50% {
+    bottom: 170px;
+   }
+   
+   60% {
+    bottom: 170px;
+   }
+
+   100% {
+    bottom: 0;
+   }
 }
 
-@keyframes clouds-animation{
-    from{
-        right: -40%;
-    }
+@keyframes clouds-animation {
+  from{
+    right: -90%;
+  }  
 
-    to{
-        right: 102%;
-    }
+  to {
+    right: 110%;
+  }
 }
 
-@keyframes dust-animation{
-    from{
-        right: -200%;
-    }
-
-    to{
-        right: 0%;
-    }
-}
-
-@keyframes dust-animation2{
-    from{
-        right: -100%;
-    }
-
-    to{
-        right: 100%;
-    }
-}
-
-@keyframes dust-animation3{
-    from{
-        right: 0%;
-    }
-
-    to{
-        right: 200%;
-    }
-}
-
-@media (max-width: 700px) {
-    @keyframes pipe-animation{
+@media (max-width: 630px) {
+    
+    @keyframes clouds-animation {
         from{
-            right: -40%;
+          right: -140%;
+        }  
+      
+        to {
+          right: 110%;
         }
-    
-        to{
-            right: 102%;
-        }
-    }
-    
-    .pipe{
-        animation: pipe-animation 1s linear infinite;
-    }
+      }
 
-    .gameOver{
-        font-size: 70px;
-        margin-top: 180px;
-    }
-
+      .gameOver{
+        font-size: 35px;
+      }
 
 }
+

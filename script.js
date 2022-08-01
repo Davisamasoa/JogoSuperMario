@@ -1,59 +1,83 @@
 const mario = document.querySelector(".mario");
 const pipe = document.querySelector(".pipe");
-const clouds = document.querySelector(".cloud");
-const dust1 = document.querySelector(".dust");
-const dust2 = document.querySelector(".dust2");
-const dust3 = document.querySelector(".dust3");
-const div = document.querySelector("div");
+const clouds = document.querySelector(".clouds");
+const gameOverText = document.querySelector(".div-gameOver");
+const startGameText = document.querySelector(".startGame");
 
-function jump () {
+const jump = () => {
     mario.classList.add("jump");
     
-    setTimeout(() => {
-        mario.classList.remove("jump");
-    }, 500);
+   setTimeout (() => {
+    mario.classList.remove("jump");
+   }, 500); 
+   
+}
+function init () {
+
+let addEventListener = () => {
+document.addEventListener ("click", jump);
+document.addEventListener ("keydown", e => {
+if (e.key == " ") {
+jump();
+}; 
+});
 }
 
-const loop = setInterval (()=> {
+startGameText.style.display = "none";
+
+const loop = setInterval ( () => {
+    mario.style.bottom = "0";
     const pipePosition = pipe.offsetLeft;
+    clouds.style.animation = "clouds-animation linear 14s infinite";
+    pipe.style.animation = "pipe-animation 1s linear infinite";
     const marioPosition = +window.getComputedStyle(mario).bottom.replace("px", "");
     const cloudPosition = clouds.offsetLeft;
-    const dust1Position = dust1.offsetLeft;
-    const dust2Position = dust2.offsetLeft;
-    const dust3Position = dust3.offsetLeft;
+    console.log(marioPosition);
 
-
-    console.log("loop");
+    document.addEventListener ("click", jump);
+    document.addEventListener ("keydown", e => {
+    if (e.key == " ") {
+    jump();
+    }; 
+    });
     
-    if(pipePosition <= 130 && pipePosition > 0 && marioPosition < 100) {
+    if (pipePosition <= 95 && pipePosition > 0 && marioPosition <= 78 ) {
         clouds.style.animation = "none";
         clouds.style.left = `${cloudPosition}px`;
-        clouds.style.top = "0";
-        
+
         pipe.style.animation = "none";
         pipe.style.left = `${pipePosition}px`;
 
-        mario.style.animation = "none";
-        mario.style.bottom = `${marioPosition}px`;
+        mario.style.bottom =  `${marioPosition}px`; 
 
         mario.src = "./img/game-over.png";
-        mario.style.width = "70px";
-        mario.style.marginLeft = "62px";
+        mario.style.width = "70px"
+        mario.style.marginLeft = "50px";
 
-        dust1.style.animation = "none";
-        dust2.style.animation = "none";
-        dust3.style.animation = "none";
-        dust1.style.left = `${dust1Position}px`;
-        dust2.style.left = `${dust2Position}px`;
-        dust3.style.left = `${dust3Position}px`;
+        gameOverText.style.display = "flex";
 
-        div.classList.add("texto");
-        
+        addEventListener = false;
 
         clearInterval(loop);
-    }
-}, 10);
+}}, 10);
+}
 
-document.addEventListener("keydown", jump)
-document.addEventListener("click", jump)
 
+
+function restart (){
+    pipe.style.left = "unset";
+    clouds.style.left = "unset";
+    mario.src = "./img/mario.gif";
+    mario.style.width = "140px"
+    mario.style.marginLeft = "0";
+    gameOverText.style.display = "none";
+    init();
+}
+
+/*document.addEventListener ("click", jump);
+document.addEventListener ("keydown", e => {
+if (e.key == " ") {
+jump();
+}; 
+});
+*/ 
