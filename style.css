@@ -88,6 +88,7 @@ align-items: center;
     align-items: center;
     flex-direction: column;
     gap: 15px;
+
 }
 
 .dust p{
@@ -100,6 +101,10 @@ align-items: center;
 
 .dust img{
     width: 30px;
+}
+
+.dust a{
+    margin-bottom: 100px;
 }
 
 .pipe{
